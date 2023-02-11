@@ -80,5 +80,60 @@ Console.WriteLine($"Разница между максимальной и мин
 
 Массивы(https://acmp.ru/asp/do/index.asp?main=task&id_course=1&id_section=5&id_topic=114&id_problem=703)
 ```
+void InputArray(int[] array)
+{
+    for (int i = 0; i < array.Length; i++)
+        array[i] = new Random().Next(1, 31);
+}
 
+Console.Clear();
+Console.Write("Введите кол-во элементов: ");
+int n = Convert.ToInt32(Console.ReadLine());
+while ((n < 1) || (n > 100))
+{
+    Console.WriteLine($"Вы ошиблись! Количество элементов целочисленного массива не должно быть меньше 1 и превышать 100! \nВведите кол-во элементов: ");
+    n = Convert.ToInt32(Console.ReadLine());
+}
+
+int[] array = new int[n];
+InputArray(array);
+Console.WriteLine($"Начальный массив: [{string.Join(" ", array)}]");
+
+int summaEven = 0;
+int summaUneven = 0;
+foreach (int i in array)
+{
+    if (i % 2==0)
+        summaEven ++;
+    else
+        summaUneven ++;
+}
+
+int[] arrayThrees = new int[summaUneven];
+int[] arrayFours = new int[summaEven];
+int n1 = 0;
+int n2 = 0;
+foreach (int i in array)
+{
+    if (i % 2==0)
+    {   
+        arrayFours[n1] = i;
+        n1++;
+    }
+    else
+    {
+        arrayThrees[n2] = i;
+        n2++;
+    }
+}
+
+Console.WriteLine($"Дни в которые Вася получил тройки: [{string.Join(" ", arrayThrees)}]");
+Console.WriteLine($"Дни в которые Вася получил четверки: [{string.Join(" ", arrayFours)}]");
+
+string result = "YES";
+if (arrayThrees.Length > arrayFours.Length)
+{
+    result = "NO";
+}
+Console.WriteLine($"Расчитывать результат английского языка на 4? {result}");
 ```
