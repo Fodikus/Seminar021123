@@ -78,7 +78,7 @@ double result = max - min;
 Console.WriteLine($"Разница между максимальной и минимальным элементом массива: [{string.Join("; ", array)}] -> {Math.Round(result, 2)} ");
 ```
 
-Массивы(https://acmp.ru/asp/do/index.asp?main=task&id_course=1&id_section=5&id_topic=114&id_problem=703)
+#Статистика. Массивы(https://acmp.ru/asp/do/index.asp?main=task&id_course=1&id_section=5&id_topic=114&id_problem=703)
 ```
 void InputArray(int[] array)
 {
